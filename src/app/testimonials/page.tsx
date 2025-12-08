@@ -122,7 +122,7 @@ export default function TestimonialsPage() {
                   >
                     <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-10 h-[350px] flex flex-col">
                       {/* Quote Icon */}
-                      <div className="text-yellow-400 text-5xl mb-4 leading-none">"</div>
+                      <div className="text-yellow-400 text-5xl mb-4 leading-none">&quot;</div>
                       
                       {/* Testimonial Text */}
                       <p className="text-gray-700 text-base leading-relaxed mb-6 flex-grow overflow-hidden">

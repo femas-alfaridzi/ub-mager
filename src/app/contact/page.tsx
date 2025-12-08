@@ -16,9 +16,10 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  // Initialize EmailJS
+  // Initialize EmailJS using environment variable (fallback to placeholder)
   useEffect(() => {
-    emailjs.init('kN9ULeWVy1ZzyW794'); // Ganti dengan public key Anda
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'kN9ULeWVy1ZzyW794'; // replace with your public key or set env
+    emailjs.init(publicKey);
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -35,12 +36,15 @@ export default function ContactPage() {
     setSubmitStatus('idle');
 
     try {
-      // Kirim email menggunakan EmailJS
+      // Kirim email menggunakan EmailJS (service/template IDs from env with fallback)
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_66fy7fp';
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_26tvjro';
+
       await emailjs.send(
-        'service_66fy7fp', // Ganti dengan service ID Anda
-        'template_26tvjro', // Ganti dengan template ID Anda
+        serviceId,
+        templateId,
         {
-          to_email: 'femasalfaridzi17@gmail.com', // Email penerima
+          to_email: process.env.NEXT_PUBLIC_CONTACT_RECEIVER_EMAIL || 'femasalfaridzi17@gmail.com', // Email penerima (set via env on Vercel)
           from_name: formData.name,
           from_email: formData.email,
           phone: formData.phone || 'Tidak diberikan',
@@ -124,7 +128,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Have questions or need help? Don't hesitate to contact the UB MAGER team. We are ready to help you 24/7!
+            Have questions or need help? Don&apos;t hesitate to contact the UB MAGER team. We are ready to help you 24/7!
           </p>
         </div>
       </div>

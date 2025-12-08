@@ -48,14 +48,16 @@ Message:
 Edit file `src/app/contact/page.tsx` dan ganti placeholder berikut:
 
 ```tsx
-// Baris 11: Ganti YOUR_PUBLIC_KEY_HERE
-emailjs.init('YOUR_PUBLIC_KEY_HERE');
+// Prefer using environment variables (recommended for Vercel)
+// Add the following environment variables in your Vercel project or local .env:
+// NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+// NEXT_PUBLIC_EMAILJS_SERVICE_ID
+// NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+// NEXT_PUBLIC_CONTACT_RECEIVER_EMAIL
 
-// Baris 39: Ganti YOUR_SERVICE_ID_HERE
-'YOUR_SERVICE_ID_HERE'
-
-// Baris 40: Ganti YOUR_TEMPLATE_ID_HERE
-'YOUR_TEMPLATE_ID_HERE'
+// The code in `src/app/contact/page.tsx` will read these env vars and fall back to
+// the placeholder values if they are not set. Example (no changes needed if you set env vars):
+// emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'your_public_key');
 ```
 
 **Contoh hasil akhir:**
@@ -84,6 +86,16 @@ await emailjs.send(
 3. Klik **New Project**
 4. Pilih repository GitHub Anda
 5. Deploy otomatis, selesai!
+
+### Menambahkan Environment Variables di Vercel
+
+1. Di dashboard Vercel, buka project Anda → `Settings` → `Environment Variables`.
+2. Tambahkan variabel berikut (untuk `Production` dan `Preview`):
+  - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY` = your EmailJS Public Key
+  - `NEXT_PUBLIC_EMAILJS_SERVICE_ID` = service_xxxxx
+  - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` = template_xxxxx
+  - `NEXT_PUBLIC_CONTACT_RECEIVER_EMAIL` = your@email.com
+3. Redeploy project (trigger a new deploy) agar variabel baru diterapkan.
 
 ---
 
