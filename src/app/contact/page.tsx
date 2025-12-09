@@ -145,14 +145,16 @@ export default function ContactPage() {
               {contactInfo.map((info, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-1"
+                  className="rounded-3xl p-[2px] bg-gradient-to-br from-[#043A53]/60 via-[#74C1E4]/40 to-[#BFEBFF]/20 group hover:scale-[1.01] transition-all duration-300 animate-shadow-glow"
                 >
-                  <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300 inline-block">
-                    {info.icon}
+                  <div className="bg-white rounded-2xl p-6 shadow-2xl hover:shadow-[0_10px_30px_rgba(4,58,83,0.12)] transition-shadow duration-300 border border-gray-100">
+                    <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300 inline-block">
+                      {info.icon}
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">{info.title}</h3>
+                    <p className="text-base font-semibold text-[#043A53] mb-1">{info.description}</p>
+                    <p className="text-sm text-gray-500">{info.detail}</p>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-1">{info.title}</h3>
-                  <p className="text-base font-semibold text-[#043A53] mb-1">{info.description}</p>
-                  <p className="text-sm text-gray-500">{info.detail}</p>
                 </div>
               ))}
             </div>
@@ -160,8 +162,9 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div className="lg:col-span-8">
-            <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 border border-gray-100">
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">Kirim Pesan</h2>
+            <div className="rounded-3xl p-[2px] bg-gradient-to-br from-[#043A53]/50 via-[#74C1E4]/30 to-[#BFEBFF]/15">
+              <div className="bg-white rounded-2xl shadow-2xl hover:shadow-[0_15px_40px_rgba(4,58,83,0.15)] transition-shadow duration-300 p-6 sm:p-8 lg:p-10 border border-gray-50">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">Kirim Pesan</h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name and Email Row */}
@@ -286,6 +289,7 @@ export default function ContactPage() {
                   </div>
                 )}
               </form>
+              </div>
             </div>
           </div>
         </div>
@@ -374,6 +378,30 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes shadow-glow-rotate {
+          0% {
+            box-shadow: 0 0 20px rgba(4, 58, 83, 0.3), 0 0 40px rgba(116, 193, 228, 0.2);
+          }
+          25% {
+            box-shadow: 20px 0 30px rgba(116, 193, 228, 0.25), 0 0 40px rgba(4, 58, 83, 0.2);
+          }
+          50% {
+            box-shadow: 0 20px 30px rgba(116, 193, 228, 0.3), 0 0 40px rgba(4, 58, 83, 0.15);
+          }
+          75% {
+            box-shadow: -20px 0 30px rgba(116, 193, 228, 0.25), 0 0 40px rgba(4, 58, 83, 0.2);
+          }
+          100% {
+            box-shadow: 0 0 20px rgba(4, 58, 83, 0.3), 0 0 40px rgba(116, 193, 228, 0.2);
+          }
+        }
+
+        :global(.animate-shadow-glow) {
+          animation: shadow-glow-rotate 6s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 }
