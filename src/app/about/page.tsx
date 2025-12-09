@@ -3,7 +3,13 @@
 import Link from "next/link";
 
 const AboutPage = () => {
-  const quoteText = `Segala jasa jadi satu tempat! Mulai dari antar jemput (anjem), jastip, joki tugas, jasa curhat ada, jasa usir cicak juga ada, jasa pemenin disaat kesepian juga ada, sampai hal absurd dan random pun ada wkwk. Semua kebutuhan mahasiswa ada di UB MAGER!`;
+  const quoteText = `Hi, everyone! Kenalin, aku Femas Alfaridzi, mahasiswa Teknologi Informasi Universitas Brawijaya sekaligus founder dari WEB UB MAGER. Buatku, UB MAGER bukan sekadar platform kecil tempat cari cuan tambahan. 
+  Di sini aku ngerjain banyak hal mulai dari antar jemput (anjem), jastip, joki tugas, sampai hal-hal absurd dan random yang cuma anak rantau yang paham. 
+  Website ini adalah bentuk kecil dari usahaku buat mengabadikan setiap langkah di masa quarter life crisis. Sebuah pengingat bahwa nggak ada kesuksesan yang lahir dari zona nyaman.
+Jadi, buat kamu yang lagi berjuang tanpa support, tetap berdiri di kaki sendiri, dan terus nyari alasan buat nggak nyerah,
+maka ingatlah satu hal:
+"Saat dunia memberimu seribu alasan untuk menyerah.
+maka, temukanlah satu alasan untuk tetap melangkah."`;
 
   return (
     <main className="min-h-screen bg-white">
@@ -12,19 +18,16 @@ const AboutPage = () => {
         <div className="flex-1 w-full max-w-7xl mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-12 pb-6 flex flex-col">
           {/* Header */}
           <div className="mb-8">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center md:text-left mb-4">
-              Temukan Kemudahan Bersama UB
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center md:text-left">
+              Meet Our Founder
             </h1>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#043A53] text-center md:text-left">
-              MAGER!
-            </h2>
           </div>
 
           {/* Quote Text - Flex-1 untuk push footer ke bawah */}
           <div className="flex-1 mb-8 min-h-[300px] md:min-h-0">
-            <p className="text-gray-700 text-base md:text-lg lg:text-xl leading-relaxed text-justify">
-              {quoteText}
-            </p>
+            <blockquote className="text-gray-700 text-base md:text-lg lg:text-xl leading-relaxed text-justify">
+              <span className="typewriter-text">{quoteText}</span>
+            </blockquote>
           </div>
 
           {/* Footer - Fixed at bottom */}
