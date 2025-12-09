@@ -162,7 +162,7 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div className="lg:col-span-8">
-            <div className="rounded-3xl p-[2px] bg-gradient-to-br from-[#043A53]/50 via-[#74C1E4]/30 to-[#BFEBFF]/15">
+            <div className="rounded-3xl p-[2px] bg-gradient-to-br from-[#043A53]/50 via-[#74C1E4]/30 to-[#BFEBFF]/15 animate-shadow-glow">
               <div className="bg-white rounded-2xl shadow-2xl hover:shadow-[0_15px_40px_rgba(4,58,83,0.15)] transition-shadow duration-300 p-6 sm:p-8 lg:p-10 border border-gray-50">
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">Kirim Pesan</h2>
               
