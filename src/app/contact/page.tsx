@@ -380,26 +380,31 @@ export default function ContactPage() {
       </div>
 
       <style jsx>{`
-        @keyframes shadow-glow-rotate {
+        @keyframes rotate-border-glow {
           0% {
-            box-shadow: 0 0 20px rgba(4, 58, 83, 0.3), 0 0 40px rgba(116, 193, 228, 0.2);
+            border-color: rgba(4, 58, 83, 0.8);
+            box-shadow: 0 0 15px rgba(4, 58, 83, 0.6), inset 0 0 15px rgba(116, 193, 228, 0.1);
           }
           25% {
-            box-shadow: 20px 0 30px rgba(116, 193, 228, 0.25), 0 0 40px rgba(4, 58, 83, 0.2);
+            border-color: rgba(116, 193, 228, 0.8);
+            box-shadow: 0 0 20px rgba(116, 193, 228, 0.7), inset 0 0 15px rgba(4, 58, 83, 0.1);
           }
           50% {
-            box-shadow: 0 20px 30px rgba(116, 193, 228, 0.3), 0 0 40px rgba(4, 58, 83, 0.15);
+            border-color: rgba(191, 235, 255, 0.8);
+            box-shadow: 0 0 25px rgba(191, 235, 255, 0.7), inset 0 0 15px rgba(116, 193, 228, 0.1);
           }
           75% {
-            box-shadow: -20px 0 30px rgba(116, 193, 228, 0.25), 0 0 40px rgba(4, 58, 83, 0.2);
+            border-color: rgba(116, 193, 228, 0.8);
+            box-shadow: 0 0 20px rgba(116, 193, 228, 0.7), inset 0 0 15px rgba(4, 58, 83, 0.1);
           }
           100% {
-            box-shadow: 0 0 20px rgba(4, 58, 83, 0.3), 0 0 40px rgba(116, 193, 228, 0.2);
+            border-color: rgba(4, 58, 83, 0.8);
+            box-shadow: 0 0 15px rgba(4, 58, 83, 0.6), inset 0 0 15px rgba(116, 193, 228, 0.1);
           }
         }
 
         :global(.animate-shadow-glow) {
-          animation: shadow-glow-rotate 6s ease-in-out infinite;
+          animation: rotate-border-glow 4s ease-in-out infinite;
         }
       `}</style>
     </div>
