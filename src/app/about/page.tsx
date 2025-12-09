@@ -1,7 +1,6 @@
 'use client';
 
 import Link from "next/link";
-import { useState, useEffect } from 'react';
 
 const AboutPage = () => {
   const quoteText = `Hi, everyone! Kenalin, aku Femas Alfaridzi, mahasiswa Teknologi Informasi Universitas Brawijaya sekaligus founder dari WEB UB MAGER. Buatku, UB MAGER bukan sekadar platform kecil tempat cari cuan tambahan. 
@@ -26,8 +25,8 @@ maka ingatlah satu hal:
           {/* Quote Text - Flex-1 untuk push footer ke bawah */}
           <div className="flex-1 mb-8 min-h-[300px] md:min-h-0">
             <blockquote className="text-gray-700 text-base md:text-lg lg:text-xl leading-relaxed text-justify">
-              <Typewriter text={quoteText} delay={15} />
-            </blockquote>
+                <span className="typewriter-text">{quoteText}</span>
+              </blockquote>
           </div>
 
           {/* Footer - Fixed at bottom */}
@@ -62,22 +61,6 @@ maka ingatlah satu hal:
       </section>
 
       <style jsx global>{`
-        .typewriter-cursor {
-          animation: blink 1s infinite;
-          color: #374151;
-          font-weight: bold;
-          margin-left: 2px;
-        }
-
-        @keyframes blink {
-          0%, 50% {
-            opacity: 1;
-          }
-          51%, 100% {
-            opacity: 0;
-          }
-        }
-
         .typewriter-text {
           word-wrap: break-word;
           line-height: 1.8;
@@ -89,33 +72,6 @@ maka ingatlah satu hal:
   );
 };
 
-// Typewriter Component
-const Typewriter = ({ text, delay = 50 }: { text: string; delay?: number }) => {
-  const [currentText, setCurrentText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isComplete, setIsComplete] = useState(false);
-
-  useEffect(() => {
-    if (currentIndex < text.length) {
-      const timeout = setTimeout(() => {
-        setCurrentText(prevText => prevText + text[currentIndex]);
-        setCurrentIndex(prevIndex => prevIndex + 1);
-      }, delay);
-
-      return () => clearTimeout(timeout);
-    } else {
-      setIsComplete(true);
-    }
-  }, [currentIndex, delay, text]);
-
-  return (
-    <span className="typewriter-text">
-      {currentText}
-      {!isComplete && (
-        <span className="typewriter-cursor">|</span>
-      )}
-    </span>
-  );
-};
+// No typing animation — static text displayed inline
 
 export default AboutPage;

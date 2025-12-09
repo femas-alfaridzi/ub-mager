@@ -89,7 +89,11 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden" onClick={closeMenu} />
+        <div
+          className="fixed inset-0 z-40 md:hidden"
+          onClick={closeMenu}
+          style={{ background: 'linear-gradient(135deg, rgba(4,58,83,0.95) 0%, rgba(52,105,138,0.92) 100%)' }}
+        />
       )}
 
       {/* Mobile Menu Content */}
