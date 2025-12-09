@@ -8,7 +8,8 @@ const AboutPage = () => {
   Website ini adalah bentuk kecil dari usahaku buat mengabadikan setiap langkah di masa quarter life crisis. Sebuah pengingat bahwa nggak ada kesuksesan yang lahir dari zona nyaman.
 Jadi, buat kamu yang lagi berjuang tanpa support, tetap berdiri di kaki sendiri, dan terus nyari alasan buat nggak nyerah,
 maka ingatlah satu hal:
-"Saat dunia memberimu seribu alasan untuk berhenti, temukan satu alasan untuk terus melangkah."`;
+"Saat dunia memberimu seribu alasan untuk menyerah.
+maka, temukanlah satu alasan untuk tetap melangkah."`;
 
   return (
     <main className="min-h-screen bg-white">
